@@ -32,7 +32,7 @@ function Product({ product }) {
           </p>
         </div>
         <div className="h-[180px]">
-          <img src={product.image} alt="not found" className="h-full w-full " />
+          <img key={product.title} src={product.image} alt="not found" className="h-full w-full " />
         </div>
         <div className="flex justify-between gap-12 items-center w-full mt-5">
           <div>
