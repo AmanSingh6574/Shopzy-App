@@ -15,7 +15,7 @@ const CartItem = ({ item, itemIndex }) => {
     <div>
       <div className="flex gap-4 p-3  shadow-xl mb-10 justify-center items-center flex-wrap space-y-10 ">
         <div className="w-[150px] ">
-          <img src={item.image} height="full" width="full" loading="lazy" />
+          <img src={item.image} height="full" width="full" loading="lazy" alt="not found" />
         </div>
 
         <div className="flex flex-col gap-4 w-[300px]  p-2 px-3">
