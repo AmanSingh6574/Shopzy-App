@@ -1,47 +1,21 @@
-import { useEffect } from "react";
-import { useState } from "react";
-import toast from "react-hot-toast";
-import Product from "../components/Product.jsx";
-import Spinner from "../components/Spinner.jsx";
+import React from "react";
+import Dispaly from "./Display.jsx";
 
 function Home() {
-  const [Data, setData] = useState([]);
-  const [loading, setloading] = useState(false);
-
-  const API_URL = "https://fakestoreapi.com/products";
-
-  async function FetchData() {
-    setloading(true);
-    try {
-      const res = await fetch(API_URL);
-      const data = await res.json();
-      setData(data);
-    } catch (error) {
-      toast.error("Error in Fetching the data");
-    }
-    setloading(false);
-  }
-
-  useEffect(() => {
-    FetchData();
-  }, []);
-
   return (
-    <div>
-      {loading ? (
-        <Spinner />
-      ) : Data.length > 0 ? (
-        <div className=" grid items-center justify-center xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 max-w-6xl p-2 mx-auto space-y-10 space-x-6 mb-10">
-          {" "}
-          {Data.map((product) => {
-            return <Product product={product} key={product.id} />;
-          })}
-        </div>
-      ) : (
-        <div className="flex justify-center items-center">
-          <p>No Data Found</p>
-        </div>
-      )}
+    <div className=" relative">
+      <div className="w-full  relative">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 absolute z-10 inset-x-0 top-1/2 transform -translate-y-1/2 flex mx-auto justify-center items-center ">
+          Explore Our Wide Selection Today!
+        </h1>
+        <img
+          className="w-full h-[500px] opacity-80 md:h-[600px] lg:h-[750px] object-cover outline-none border-none"
+          loading="lazy"
+          src="https://images.unsplash.com/photo-1634973357973-f2ed2657db3c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1332&q=80"
+          alt="home-img"
+        />
+      </div>
+      <Dispaly />
     </div>
   );
 }

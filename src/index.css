@@ -6,19 +6,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color-scheme: black;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  min-height: 100vh;
-  background-color: #fff;
-  background-image: linear-gradient(rgb(17, 24, 39), rgb(47, 8, 77), rgb(39, 12, 87))
 }
 
 
-.home-title{
-    
-  font-weight: 900;
-  font-family:Georgia, 'Times New Roman', Times, serif
-}
